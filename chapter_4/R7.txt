@@ -1,0 +1,6 @@
+R7. Discuss why each input port in a high-speed router stores a shadow copy of the forwarding table.
+------
+
+Each input port keeps a shadow copy of the forwarding table so it can perform lookups locally and forward packets at line speed. 
+
+This avoids the delay and bottleneck that would occur if every packet had to consult a centralized processor.

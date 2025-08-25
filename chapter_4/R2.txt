@@ -1,0 +1,8 @@
+R2. We noted that network layer functionality can be broadly divided into data plane functionality and control plane functionality. 
+
+What are the main functions of the data plane? Of the control plane?
+--------------
+
+The data plane performs packet forwarding using forwarding tables located at the input ports (often implemented in hardware such as ASICs).
+
+The control plane runs in software on the CPU, computing and distributing the routing tables that populate those forwarding tables.

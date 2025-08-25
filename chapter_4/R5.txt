@@ -1,0 +1,11 @@
+R5.
+We said that a network layer’s service model “defines the characteristics of end-to-end transport of packets between sending and receiving hosts.” 
+
+1. What is the service model of the Internet’s network layer? 
+
+2. What guarantees are made by the Internet’s service model regarding the host-to-host delivery of datagrams?
+------------------------------------
+
+1. The Internet’s network layer provides a best-effort delivery service via the IP protocol, using source and destination IP addresses to move packets end-to-end.
+
+2. This service makes no guarantees: datagrams may be lost, duplicated, or delivered out of order, and reliability is left to higher layers (e.g., TCP).

@@ -1,0 +1,10 @@
+R9. Suppose that an arriving packet matches two or more entries in a router’s forwarding table. 
+
+With traditional destination-based forwarding, what rule does a router apply to determine which of these rules should be applied
+to determine the output port to which the arriving packet should be switched?
+------------
+
+With destination-based forwarding, the router applies the Longest Prefix Match rule, selecting the forwarding table entry with the most 
+specific matching prefix for the destination address.
+
+“longer prefix = more specific = chosen”

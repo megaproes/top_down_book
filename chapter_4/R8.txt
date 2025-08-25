@@ -1,0 +1,10 @@
+R8. What is meant by destination-based forwarding? 
+How does this differ from generalized forwarding (assuming you’ve read Section 4.4, which of the two approaches are adopted by Software-Defined Networking)?
+--------------------
+
+Destination-based forwarding uses only the destination IP address to decide the output port.
+
+Generalized forwarding can use multiple header fields (e.g., source/destination addresses, port numbers, protocol type, etc.) 
+to make forwarding decisions.
+
+SDN adopts generalized forwarding, enabling flexible and programmable control of packet flows.

@@ -1,0 +1,12 @@
+R6. In Section 4.2, we saw that a router typically consists of input ports, output ports, a switching fabric and a routing processor. 
+
+1. Which of these are implemented in hardware and which are implemented in software? Why? 
+
+2. Returning to the notion of the network layer’s data plane and control plane, which are implemented in hardware and which are implemented in software? Why?
+-------------------
+
+1. The input/output ports and switching fabric are implemented in hardware to enable very fast lookups and packet switching. 
+The routing processor is implemented in software since it handles complex computations such as route calculations and network services.
+
+2. The data plane (input/output ports and switching fabric) is implemented in hardware for high-speed forwarding, 
+while the control plane is implemented in software to compute and distribute routing information.

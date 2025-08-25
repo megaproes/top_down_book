@@ -1,0 +1,8 @@
+R3. We made a distinction between the forwarding function and the routing function performed in the network layer. 
+
+What are the key differences between routing and forwarding?
+-----------------------
+
+Routing is the control-plane function of computing best paths to destinations and installing them into the forwarding tables.
+
+Forwarding is the data-plane function of directing incoming packets from input ports to the appropriate output ports based on those tables.

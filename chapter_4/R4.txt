@@ -1,0 +1,3 @@
+R4. What is the role of the forwarding table within a router?
+
+The forwarding table tells the router which output port each incoming packet should be sent to, based on the packet’s header information (e.g., destination address).
