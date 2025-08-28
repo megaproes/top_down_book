@@ -1,0 +1,14 @@
+R26. Suppose you purchase a wireless router and connect it to your cable modem.
+
+Also suppose that your ISP dynamically assigns your connected device (that is, your wireless router) one IP address. 
+
+Also suppose that you have five PCs at home that use 802.11 to wirelessly connect to your wireless router. 
+
+1. How are IP addresses assigned to the five PCs? 
+
+2. Does the wireless router use NAT? Why or why not?
+-----------------
+
+1. They assigned dynamically to each host via DHCP protocol. 
+
+2. Yes, because each of local hosts still share the same public IP address. 

@@ -1,0 +1,3 @@
+R25. Suppose an application generates chunks of 40 bytes of data every 20 msec, and each chunk gets encapsulated in a TCP segment and then an IP datagram.
+
+What percentage of each datagram will be overhead, and what percentage will be application data?

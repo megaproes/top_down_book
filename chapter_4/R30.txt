@@ -1,0 +1,10 @@
+R30. Compare and contrast the IPv4 and the IPv6 header fields. 
+
+Do they have any fields in common?
+-----------------
+
+These are two different protocols used to uniquely indentify a host in Internet. 
+
+IPv6 simplified the header compared to IPv4: it dropped fields like checksum, fragmentation, and header length to speed up forwarding. 
+IPv6 also introduced new fields like Flow Label and extension headers for flexibility. 
+The common fields between IPv4 and IPv6 are version, traffic class/type of service, hop limit/TTL, next-header/protocol, and source/destination addresses

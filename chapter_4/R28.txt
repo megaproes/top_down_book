@@ -1,0 +1,11 @@
+R28. What is meant by a “plug-and-play” or “zeroconf” protocol?
+-------------
+A plug-and-play or Zero Configuration (Zeroconf) protocol is a networking mechanism that allows devices to automatically configure 
+themselves and communicate on a network without requiring manual IP setup, DHCP servers, or DNS servers.
+
+Examples:
+1. Link-Local Addressing (IPv4 APIPA / IPv6 fe80::/10): If no DHCP server is found, hosts auto-assign an address (e.g., 169.254.x.x in IPv4).
+
+2. mDNS (multicast DNS): Devices resolve each other’s hostnames without a central DNS server (common in Apple Bonjour / AirPrint).
+
+3. SSDP / UPnP: Service discovery so devices announce what they offer.

@@ -1,0 +1,15 @@
+R24. Suppose there are three routers between a source host and a destination host.
+
+1. Ignoring fragmentation, an IP datagram sent from the source host to the destination host will travel over how many interfaces? 
+
+2. How many forwarding tables will be indexed to move the datagram from the source to the destination?
+------------
+
+1. It will travel first the host's interface (+1), then the next R1 ingress NIC interface then its egress (+2); 
+then ingress of R2 and egress of R2 (+2); 
+then ingress of R3 and egress of R3 (+2); 
+and then finally ingress of final host (+1).
+
+So final travelled interfaces is 8.
+
+2. Forwarding tables are stored inside router, so only 3.

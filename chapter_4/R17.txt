@@ -1,0 +1,7 @@
+R17. Suppose Host A sends Host B a TCP segment encapsulated in an IP datagram. 
+
+When Host B receives the datagram, how does the network layer in Host B know it should pass the segment (that is, the payload of the datagram)
+to TCP rather than to UDP or to some other upper-layer protocol?
+-----------------
+
+It does so by looking at the IP header field called 'Protocol', that specifies higher layer protocol.

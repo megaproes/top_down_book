@@ -1,0 +1,10 @@
+R18. What field in the IP header can be used to ensure that a packet is forwarded through no more than N routers
+------------
+
+TTL field.
+
+The Time to Live (TTL) field in the IP header is used to ensure a packet is forwarded through no more than a specified number of routers. 
+
+Each time a packet passes through a router, its TTL value is decreased by one. 
+
+If the TTL reaches zero before reaching the destination, the packet is discarded. 

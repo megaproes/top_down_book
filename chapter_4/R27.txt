@@ -1,0 +1,8 @@
+R27. 
+1. What is meant by the term “route aggregation”? 
+2. Why is it useful for a router to perform route aggregation?
+-------------
+
+1. Route aggregation (or summarization) is combining multiple contiguous IP prefixes into a single, shorter prefix (e.g., 192.168.0.0/24 + 192.168.1.0/24 --> 192.168.0.0/23).
+
+2. Usefulness: It reduces the number of entries in routing tables, which improves scalability, decreases memory/CPU usage on routers, and minimizes routing updates.

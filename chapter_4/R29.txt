@@ -1,0 +1,9 @@
+R29. 
+1. What is a private network address? 
+2. Should a datagram with a private network address ever be present in the larger public Internet? Explain.
+-----------
+
+1. A private IP address is an IP address from ranges reserved by RFC 1918 
+(for IPv4: 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16; and in IPv6: fc00::/7 = unique local addresses).
+
+2. No, private address ranges are reserved for private use only with RFC 1918 (10/8, 172.16/12, 192.168/16). 

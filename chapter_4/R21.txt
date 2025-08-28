@@ -1,0 +1,4 @@
+R21. Do routers have IP addresses? If so, how many?
+----------
+
+Yes, per interface. They have at least two for LAN and WAN interfaces.

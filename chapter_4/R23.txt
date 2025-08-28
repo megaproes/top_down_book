@@ -1,0 +1,13 @@
+R23. Visit a host that uses DHCP to obtain its IP address, network mask, default router, and IP address of its local DNS server. List these values.
+-----------------------------------
+
+ip addr show && resolvectl status:
+2: enp1s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 58:42:10:02:5s:62 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.16/24 brd 192.168.0.255 scope global dynamic noprefixroute enp1s0
+
+Link 2 (enp1s0)
+    Current Scopes: DNS
+         Protocols: +DefaultRoute -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+Current DNS Server: 8.8.8.8
+       DNS Servers: 8.8.8.8
