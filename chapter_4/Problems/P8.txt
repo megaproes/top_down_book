@@ -1,0 +1,36 @@
+P8. Consider a datagram network using 32-bit host addresses. Suppose a router has four links, numbered 0 through 3, and packets are to be forwarded to the
+link interfaces as follows:
+Destination Address Range 			Link Interface
+11100000 00000000 00000000 00000000
+through 								0
+11100000 00111111 11111111 11111111
+
+11100000 01000000 00000000 00000000
+through 								1
+11100000 01000000 11111111 11111111
+
+11100000 01000001 00000000 00000000
+through 								2
+11100001 01111111 11111111 11111111
+
+otherwise 							3
+
+a. Provide a forwarding table that has five entries, uses longest prefix matching, and forwards packets to the correct link interfaces.
+b. Describe how your forwarding table determines the appropriate link interface for datagrams with destination addresses:
+11001000 10010001 01010001 01010101
+11100001 01000000 11000011 00111100
+11100001 10000000 00010001 01110111
+---------------------
+
+a. 
+Destination Network		Output Interface
+224.0.0.0/10				  0
+224.64.0.0/16				  1
+224.65.0.0/8				  2 (224.65.0.0 - 224.255.255.255)
+225.0.0.0/9				  2 (225.0.0.0  - 225.127.255.255)
+0.0.0.0/0					  3
+
+b.
+1. 11001000 10010001 01010001 01010101 = 200.145.81.85. Here is 0 matching bits, so it goes to interface 3.
+2. 11100001 01000000 11000011 00111100 = 225.64.195.60. It matches 225.0.0.0/9 - interface 2
+3. 11100001 10000000 00010001 01110111 = 225.128.17.119. Does not match 225.0.0.0/9 (second byte >=128) and no 225/8 entry exists -- interface 3.

@@ -1,0 +1,28 @@
+P10. Consider a datagram network using 8-bit host addresses. 
+Suppose a router uses longest prefix matching and has the following forwarding table:
+
+Prefix Match 		 Interface
+1 					0
+10 					1
+111 					2
+otherwise 			3
+
+For each of the four interfaces, give the associated range of destination host
+addresses and the number of addresses in the range.
+----------
+1. Range: 1xxxxxxx = 10000000-11111111 (128-255) -- 128 addrs.
+2. Range: 10xxxxxx = 10000000-10111111 (128-191) -- 64 addrs.
+3. Range: 111xxxxx = 11100000-11111111 (224-255) -- 32 addrs.
+4. Range: xxxxxxxx = 00000000-11111111 (0-255)   -- 255 addrs.
+
+Why not 256?
+
+- The full 8-bit address space is 00000000–11111111 = 0-255 = 256 addresses.
+- But the earlier prefixes already consume part of that space:
+	-- 1* (prefix 1) consumes 128–255.
+	-- Within that, 10* (128–191) and 111* (224–255) are even more specific.
+	
+So the “otherwise” bucket only catches what’s left unclaimed: 00000000–01111111 = 0-127 = 128 addresses.
+
+If you didn’t have those other prefix rules, then yes, “otherwise” would cover the whole 0-255 (all 256 addresses). 
+But once you add explicit rules above, they carve out pieces of the space, and “otherwise” just sweeps up the leftovers.

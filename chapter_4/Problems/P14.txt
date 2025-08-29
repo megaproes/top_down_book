@@ -1,0 +1,17 @@
+P14. Consider a subnet with prefix 128.119.40.128/26. 
+1. Give an example of one IP address (of form xxx.xxx.xxx.xxx) that can be assigned to this network.
+----------
+Suppose an ISP owns the block of addresses of the form 128.119.40.64/26.
+Suppose it wants to create four subnets from this block, with each block having the same number of IP addresses. 
+
+2. What are the prefixes (of form a.b.c.d/x) for the four subnets?
+----------
+
+1. Any IP from range (128.119.40.128 -- 128.119.40.191) is fine, for example 128.119.40.160
+
+2. ISP owns the range of 128.119.40.64 to 128.119.40.127, or 64 addresses total. 
+It divides 64/4 = 16, so 16 addrs. per subnet, which are:
+Subnet 1: 128.119.40.64 - 128.119.40.79 - 128.119.40.64/28
+Subnet 2: 128.119.40.80 - 128.119.40.95 - 128.119.40.80/28
+Subnet 3: 128.119.40.96 - 128.119.40.111 - 128.119.40.96/28
+Subnet 4: 128.119.40.112 - 128.119.40.127 - 128.119.40.112/28

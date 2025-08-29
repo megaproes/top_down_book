@@ -1,0 +1,12 @@
+P11. Consider a router that interconnects three subnets: Subnet 1, Subnet 2, and Subnet 3. 
+
+Suppose all of the interfaces in each of these three subnets are required to have the prefix 223.1.17/24. 
+
+Also suppose that Subnet 1 is required to support at least 60 interfaces, Subnet 2 is to support at least 90
+interfaces, and Subnet 3 is to support at least 12 interfaces. 
+
+Provide three network addresses (of the form a.b.c.d/x) that satisfy these constraints.
+----------------
+Subnet 2: 223.1.17.0   - 223.1.17.127 -- 223.1.17.0/25 
+Subnet 1: 223.1.17.128 - 223.1.17.191 -- 223.1.17.128/26
+Subnet 3: 223.1.17.192 - 223.1.17.207 -- 223.1.17.192/28

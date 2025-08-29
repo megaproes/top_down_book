@@ -1,0 +1,18 @@
+P9. Consider a datagram network using 8-bit host addresses. Suppose a router
+uses longest prefix matching and has the following forwarding table:
+Prefix Match 		 Interface
+00 					0
+010 					1
+011 					2
+10 					2
+11 					3
+
+For each of the four interfaces, give the associated range of destination host
+addresses and the number of addresses in the range.
+----------
+
+1. Range: 00xxxxxx = 00000000–00111111 (0-63)    -- 64 addrs.
+2. Range: 010xxxxx = 01000000-01011111 (64-95)   -- 32 addrs.
+3. Range: 011xxxxx = 01100000-01111111 (96-127)  -- 32 addrs.
+4. Range: 10xxxxxx = 10000000-10111111 (128-191) -- 64 addrs
+5. Range: 11xxxxxx = 11000000-11111111 (192-255) -- 64 addrs.
