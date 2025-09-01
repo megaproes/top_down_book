@@ -1,0 +1,9 @@
+P25. Consider the Internet protocol stack in Figures 1.23 and 4.31. 
+
+Would you consider the ICMP protocol to be a network-layer protocol or a transport-layer protocol? Justify your answer.
+-----------------
+ICMP is a network-layer protocol. It doesn’t use port numbers like transport-layer protocols do. 
+
+Instead, it’s tightly integrated with IP and is used for error reporting and control messages (for example, Destination Unreachable, Time Exceeded, Echo Request/Reply). 
+
+ICMP supports the operation of IP itself, so it’s considered part of the network layer rather than the transport layer.
