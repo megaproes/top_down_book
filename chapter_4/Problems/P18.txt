@@ -1,0 +1,23 @@
+P18. Consider the network setup in Figure 4.25. Suppose that the ISP instead
+assigns the router the address 24.34.112.235 and that the network address of the home network 
+is 192.168.1/24.
+
+a. Assign addresses to all interfaces in the home network.
+b. Suppose each host has two ongoing TCP connections, all to port 80 at
+host 128.119.40.86. Provide the six corresponding entries in the NAT translation table.
+---------------
+
+a. 
+Router: 192.168.1.1, 
+Host A: 192.168.1.2, 
+Host B: 192.168.1.3 
+Host C: 192.168.1.4
+
+b. 
+WAN side				LAN side
+24.34.112.235, 4000		192.168.1.2, 3345
+24.34.112.235, 4001		192.168.1.2, 9600
+24.34.112.235, 4002		192.168.1.3, 5500
+24.34.112.235, 4003		192.168.1.3, 10560
+24.34.112.235, 4004		192.168.1.4, 1205
+24.34.112.235, 4005		192.168.1.4, 12685
