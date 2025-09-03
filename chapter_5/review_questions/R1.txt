@@ -1,0 +1,10 @@
+R1. What is meant by a control plane that is based on per-router control? 
+
+In such cases, when we say the network control and data planes are implemented “monolithically,” what do we mean?
+--------------
+
+A control plane based on per-router control means that each router runs its own routing algorithms (e.g., OSPF, BGP, RIP), computes routes independently, 
+and installs the resulting forwarding entries into its local FIB. The data plane then forwards packets using that FIB. 
+
+When we say the network control and data planes are implemented ‘monolithically,’ we mean that both planes are bundled 
+inside each router -- each router contains the full control logic and forwarding functions, rather than being separated or centralized as in SDN.

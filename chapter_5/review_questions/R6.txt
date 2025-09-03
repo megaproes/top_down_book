@@ -1,0 +1,8 @@
+R6. Is it necessary that every autonomous system use the same intra-AS routing algorithm? Why or why not?
+--------------
+
+It’s not necessary for every AS to use the same intra-AS routing algorithm. Each AS is free to choose whichever IGP it wants, since it’s managed independently. 
+
+For example, one AS might run OSPF while another runs IS-IS. 
+
+What matters is internal consistency within the AS. At the boundaries, all ASes use BGP for inter-AS routing, so interoperability is preserved.

@@ -1,0 +1,8 @@
+R7. Why are different inter-AS and intra-AS protocols used in the Internet?
+--------------
+
+Different routing protocols are used because the goals are different. Intra-AS protocols like OSPF or IS-IS are designed for efficiency and fast convergence within 
+a single administrative domain, where routers can fully cooperate. 
+
+Inter-AS routing with BGP, however, must scale to the global Internet and respect business and policy constraints between independent organizations. 
+BGP prioritizes policy and scalability over fast convergence, which is why the Internet separates intra-AS and inter-AS routing.

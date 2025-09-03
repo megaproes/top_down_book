@@ -1,0 +1,10 @@
+R8. True or false: When an OSPF route sends its link state information, it is sent only to those nodes directly attached neighbors. Explain.
+-----------------
+
+False. An OSPF router sends link-state advertisements to its directly attached neighbors, but those neighbors flood the information further. 
+
+This controlled flooding continues until all routers in the OSPF area receive the link-state information. 
+
+That’s how OSPF ensures every router has a complete and consistent view of the area’s topology. 
+
+This ensures every router in the area builds the same link-state database and can run Dijkstra’s SPF algorithm.

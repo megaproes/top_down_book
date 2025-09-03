@@ -1,0 +1,17 @@
+Distance-vector protocols like RIP exchange routing tables with neighbors. 
+Each router only knows distances through neighbors, which makes them simple but prone to loops and slow convergence. 
+
+Link-state protocols like OSPF flood link information, giving every router a complete network map to run shortest-path calculations. 
+They converge quickly and avoid loops but at higher overhead.
+
+BGP, in contrast, is a path-vector protocol. Routers exchange routes along with the sequence of ASes to reach a destination. 
+This prevents loops and allows policy-based routing. 
+
+BGP is used for inter-domain routing on the Internet, where scalability and policy control are more important than rapid convergence
+
+In BGP, each router doesn’t know the internal topology of other ASes — it only knows the sequence of ASes (the path vector) to reach a destination. 
+
+For example, a route to 8.8.8.0/24 might have a path [100, 200], meaning it goes through AS100 then AS200. 
+
+This differs from link-state, where every router builds a full network map, and distance-vector, where routers only exchange costs. 
+The ‘vector’ in path-vector comes from the fact that the advertised path is represented as an ordered vector of AS numbers.

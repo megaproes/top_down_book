@@ -1,0 +1,10 @@
+R9. What is meant by an area in an OSPF autonomous system? Why was the concept of an area introduced?
+------------------
+
+An OSPF area is a logical grouping of routers within an AS. Each area maintains its own link-state database and runs SPF locally. 
+
+Routers don’t need to know the full topology of other areas, only summary routes to reach them. 
+
+The area concept was introduced to improve scalability: it reduces flooding and SPF computation overhead in large networks. 
+
+The backbone area (Area 0) connects all other areas together.

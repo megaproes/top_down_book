@@ -1,0 +1,9 @@
+R2. What is meant by a control plane that is based on logically centralized control? 
+
+In such cases, are the data plane and the control plane implemented within the same device or in separate devices? Explain.
+----------
+
+In a logically centralized control plane, routing decisions are made by a central controller that has a network-wide view. 
+The controller computes the forwarding state and installs it into the routers. This makes the routers primarily simple forwarding devices, with the control logic separated out. 
+
+The control and data planes are therefore implemented in separate devices: the control plane in the centralized controller, and the data plane in the individual routers.

@@ -1,0 +1,7 @@
+R20. What two types of ICMP messages are received at the sending host executing the Traceroute program?
+--------
+When executing traceroute, the sender receives two kinds of ICMP messages. From intermediate routers, it receives ICMP Time Exceeded messages, since the TTL expires along the path. 
+
+From the final destination host, it receives ICMP Destination Unreachable (Port Unreachable), since traceroute sends UDP probes to an unused port. 
+
+These two types of ICMP responses allow traceroute to identify the routers along the path and the final destination.

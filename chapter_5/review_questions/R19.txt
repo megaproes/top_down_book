@@ -1,0 +1,11 @@
+R19. Names four different types of ICMP messages
+----------
+
+ICMP is a companion protocol to IP that reports errors and provides diagnostics. 
+Each ICMP message has a Type field, which defines the high-level category, and a Code field, which refines the meaning. 
+
+For example, Destination Unreachable is Type 3; the Code tells whether it’s network unreachable, host unreachable, or port unreachable. 
+
+The RFC defines these Type/Code combinations, which is why we interpret them in that way. 
+
+Four common ICMP message types are Echo Request, Echo Reply, Destination Unreachable, and Time Exceeded.

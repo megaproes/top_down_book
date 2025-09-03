@@ -1,0 +1,11 @@
+R3. Compare and contrast the properties of a centralized and a distributed routing algorithm. 
+Give an example of a routing protocol that takes a centralized and a decentralized approach.
+-----------------
+
+A centralized routing algorithm runs on a central controller with a complete global view of the network. It computes the best paths for all routers and pushes forwarding information out to them. 
+This allows globally optimal routing decisions, but it raises scalability and reliability concerns. 
+
+A distributed routing algorithm, on the other hand, is run by each router independently, with routers exchanging information with neighbors to gradually converge to correct routes. 
+This is more scalable and fault-tolerant, but convergence may be slower and less consistent. 
+
+An example of a centralized approach is routing in an SDN controller, while examples of distributed approaches include RIP (distance vector) and OSPF (link state)

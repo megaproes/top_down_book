@@ -1,0 +1,8 @@
+R10. Define and contrast the following terms: subnet, prefix, and BGP route.
+--------------
+
+A subnet is a group of hosts that share the same network prefix and can directly communicate without a router. 
+A prefix is the notation used to represent a contiguous block of IP addresses, defined by a network address and mask length, such as 192.168.1.0/24. 
+
+A BGP route, in contrast, is an advertisement of reachability to a prefix along with routing attributes like AS-path and next hop. 
+Subnet and prefix describe addressing, while a BGP route is a routing announcement that tells the Internet how to reach a prefix.
