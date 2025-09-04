@@ -1,0 +1,5 @@
+R2. If all the links in the Internet were to provide reliable delivery service, would
+the TCP reliable delivery service be redundant? Why or why not?
+-----------
+
+TCP’s reliable delivery service would not be redundant. Link reliability helps, but only TCP ensures end-to-end correctness.

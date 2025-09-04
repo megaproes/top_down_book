@@ -1,0 +1,7 @@
+R12. For the network in Figure 6.19, the router has two ARP modules, each with its
+own ARP table. Is it possible that the same MAC address appears in both tables?
+-----------
+
+Each router interface maintains its own ARP table for its subnet. Normally, the same MAC address will not appear in both tables because each interface connects to a different subnet with different hosts. 
+
+However, in special cases (such as a multi-homed host using the same MAC on multiple interfaces, or MAC spoofing/virtualization), the same MAC could appear in both ARP tables.

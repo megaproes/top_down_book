@@ -1,0 +1,9 @@
+R3. What are some of the possible services that a link-layer protocol can offer
+to the network layer? Which of these link-layer services have corresponding services in IP? In TCP?
+------------
+
+1. Link-layer can provide framing, link access, reliable delivery, error detection/correction, and flow control.
+
+2. IP provides only error detection (via header checksum in IPv4).
+
+3. TCP provides reliable delivery, error detection, flow control, and congestion control at the end-to-end level.

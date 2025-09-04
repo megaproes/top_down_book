@@ -1,0 +1,7 @@
+R11. Why is an ARP query sent within a broadcast frame? Why is an ARP
+response sent within a frame with a specific destination MAC address?
+-------------
+
+An ARP query is broadcast because the sender doesn’t know which MAC address corresponds to the target IP, so it must ask all hosts in the LAN. 
+
+The ARP reply, however, is sent as a unicast to the requester’s MAC address, since only that host needs the mapping information.

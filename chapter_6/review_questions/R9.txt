@@ -1,0 +1,6 @@
+R9. How big is the MAC address space? The IPv4 address space? The IPv6 address space?
+----------------
+
+1. MAC  = 2^(6*8)  = 281,474,976,710,656
+2. IPv4 = 2^(4*8)  = 4,294,967,296
+3. IPv6 = 2^(8*16) = 340,282,366,920,938,463,463,374,607,431,768,211,456

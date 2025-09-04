@@ -1,0 +1,11 @@
+R10. Suppose nodes A, B, and C each attach to the same broadcast LAN (through their adapters). 
+
+If A sends thousands of IP datagrams to B with each encapsulating frame addressed to the MAC address of B, will C’s adapter process these frames? 
+If so, will C’s adapter pass the IP datagrams in these frames to the network layer C? 
+How would your answers change if A sends frames with the MAC broadcast address?
+-----------------
+
+In a broadcast LAN, all adapters receive all frames. If A sends unicast frames addressed to B’s MAC, C’s adapter will see the frames but discard them at Layer 2 
+since the destination MAC doesn’t match its own. The IP datagrams inside will not be passed up to C’s network layer.
+
+If A instead sends frames to the broadcast MAC address, then all adapters, including C’s, will accept the frames and pass the encapsulated IP datagrams up to their network layers.
