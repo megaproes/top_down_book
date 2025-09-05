@@ -1,0 +1,43 @@
+P28. Consider the single switch VLAN in Figure 6.25, and assume an external router is connected to switch port 1. 
+Assign IP addresses to the EE and CS hosts and router interface. 
+
+Trace the steps taken at both the network layer and the link layer to transfer an IP datagram from an EE host to a CS host
+(Hint: Reread the discussion of Figure 6.19 in the text).
+----------------------
+
+VLAN IDs:
+	-- EE VLAN = 10 (ports 2–8)
+	-- CS VLAN = 20 (ports 9–15)
+	-- Port 1 (to the router) = 802.1Q trunk carrying VLANs 10 & 20
+
+EE subnet (VLAN 10): 192.168.10.0/24
+	-- EE host H_EE: 192.168.10.11/24, MAC EE:EE
+	-- Router subif (to EE): 192.168.10.1, MAC R:EE (default gateway for EE hosts)
+	
+CS subnet (VLAN 20): 192.168.20.0/24
+	-- CS host H_CS: 192.168.20.21/24, MAC CC:CS
+	-- Router subif (to CS): 192.168.20.1, MAC R:CS (default gateway for CS hosts)
+
+EE → CS: step-by-step (network + link layer)
+1. EE host decides next hop
+	-- Dest IP 192.168.20.21 is off-subnet → send to default gateway 192.168.10.1.
+	-- If missing, ARP for 192.168.10.1 within VLAN 10:
+		- ARP broadcast floods only EE VLAN ports (2–8) + trunk (tagged VLAN 10).
+		- Router subinterface for VLAN 10 replies unicast with MAC R:EE.
+
+
+2. EE → Router (over VLAN 10)
+	-- IP: src 192.168.10.11, dst 192.168.20.21
+	-- Ethernet (access on EE port; tagged VLAN 10 on trunk):
+		- src MAC EE:EE, dst MAC R:EE
+	-- Switch forwards to port 1 only (learned CAM).
+
+3. Router routes
+	-- Strips L2, decrements TTL, looks up 192.168.20.0/24 → out subif VLAN 20.
+	-- If missing, ARP for 192.168.20.21 within VLAN 20 (broadcast to ports 9–15); H_CS replies with MAC CC:CS.
+
+4. Router → CS (over VLAN 20)
+	-- IP (unchanged): src 192.168.10.11, dst 192.168.20.21
+	-- Ethernet (tagged VLAN 20 on trunk, untagged on CS access port):
+		- src MAC R:CS, dst MAC CC:CS
+	-- Switch forwards to H_CS’s port only.

@@ -1,0 +1,14 @@
+P16. Consider the previous problem, but suppose now that the router between subnets 2 and 3 is replaced by a switch. 
+Answer questions (a)–(c) in the previous problem in this new context.
+------------
+
+a. The asnwer is the same, except that we don't have a router yet.
+
+b. E will see that B is in different subnet but also that it doesn't have its default gateway, so a packet is dropped.
+
+c. 
+1. Same as before
+2. There's no router yet
+3. ALready replaced switch will forward this frames to E and F.
+4. Same Answer
+5. Same Answer

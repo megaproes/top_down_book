@@ -1,0 +1,16 @@
+R16. Suppose that N switches supporting K VLAN groups are to be connected via a trunking protocol. How many ports are needed to connect the switches?
+Justify your answer.
+------------------
+K VLANs don’t change the count because trunks tag all VLANs over the same link.
+Each inter-switch link uses 2 switch ports (one at each end).
+Choose your topology → count links → multiply by 2.
+
+Case 1: Full mesh topology.
+Every switch is directly connected to every other switch.
+For N switches, the number of links is N(N - 1) / 2. Since each link uses 2 ports (one per switch),
+total number of ports are 2 * (N(N - 1)/2) = N(N - 1). 
+
+Case 2: Tree / star / topology
+The minimum number of links to connect N switches is N−1 (like a spanning tree).
+Each link uses 2 ports. 
+So the total number of ports is: 2(N−1)

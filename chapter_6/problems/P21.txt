@@ -1,0 +1,30 @@
+Consider Figure 6.33 in problem P14. Provide MAC addresses and IP addresses for the interfaces at Host A, both routers, and Host F. 
+
+Suppose Host A sends a datagram to Host F. Give the source and destination MAC addresses in the frame encapsulating this IP datagram as 
+the frame is transmitted 
+(i) from A to the left router, 
+(ii) from the left router to the right router,
+(iii) from the right router to F. 
+
+Also give the source and destination IP addresses in the IP datagram encapsulated within the frame at each of these points in time.
+-----------------------------
+
+Host A: 			 IP 192.168.1.50/24,  MAC AA:AA
+Host F: 			 IP 192.168.3.156/24, MAC FF:FF
+R1 (left, Subnet1):  IP 192.168.1.1, MAC R1-L
+R1 (right, Subnet2): IP 192.168.2.1, MAC R1-R
+R2 (left, Subnet2):  IP 192.168.2.2, MAC R2-L
+R2 (right, Subnet3): IP 192.168.3.1, MAC R2-R
+
+
+(i) A -> R1 (left, Subnet1)
+Ethernet: src AA:AA, dst R1-L
+IP: src 192.168.1.50, dst 192.168.3.156
+
+(ii) R1 (right) -> R2 (left) over Subnet2
+Ethernet: src R1-R, dst R2-L
+IP: src 192.168.1.50, dst 192.168.3.156 (TTL − 1)
+
+(iii) R2 (right) -> F over Subnet3
+Ethernet: src R2-R, dst FF:FF
+IP: src 192.168.1.50, dst 192.168.3.156

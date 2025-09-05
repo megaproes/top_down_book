@@ -1,0 +1,4 @@
+R15. What is the maximum number of VLANs that can be configured on a switchsupporting the 802.1Q protocol? Why?
+-------
+
+maximum is 2^12 = 4096, because IEEE 802.1Q specifies a 12-bit VLAN ID, but VLAN IDs 0 and 4095 are reserved for special purposes, leaving 4094 usable VLAN IDs (from 1 to 4094)

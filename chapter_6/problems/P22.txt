@@ -1,0 +1,11 @@
+P22. Suppose now that the leftmost router in Figure 6.33 is replaced by a switch.
+
+Hosts A, B, C, and D and the right router are all star-connected into this switch. 
+Give the source and destination MAC addresses in the frame encapsulating this IP datagram as the frame is transmitted 
+(i) from A to the switch,
+(ii) from the switch to the right router, 
+(iii) from the right router to F. 
+
+Also give the source and destination IP addresses in the IP datagram encapsulated within the frame at each of these points in time.
+------------------
+

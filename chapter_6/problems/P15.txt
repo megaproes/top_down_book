@@ -1,0 +1,37 @@
+P15. Consider Figure 6.33. Now we replace the router between subnets 1 and 2 with a switch S1, and label the router between subnets 2 and 3 as R1.
+
+a. Consider sending an IP datagram from Host E to Host F. Will Host E ask router R1 to help forward the datagram? Why? In the Ethernet frame containing the
+IP datagram, what are the source and destination IP and MAC addresses?
+
+b. Suppose E would like to send an IP datagram to B, and assume that E’s ARP cache does not contain B’s MAC address. Will E perform an ARP query to find B’s MAC address? 
+Why? In the Ethernet frame (containing the IP datagram destined to B) that is delivered to router R1, what are the source and destination IP and MAC addresses?
+
+c. Suppose Host A would like to send an IP datagram to Host B, and neither A’s ARP cache contains B’s MAC address nor does B’s ARP cache contain A’s
+MAC address. Further suppose that the switch S1’s forwarding table contains entries for Host B and router R1 only. Thus, A will broadcast an ARP request message. 
+1. What actions will switch S1 perform once it receives the ARP request message? 
+2. Will router R1 also receive this ARP request message? 
+3. If so, will R1 forward the message to Subnet 3? 
+4. Once Host B receives this ARP request message, it will send back to Host A an ARP response message. 
+But will it send an ARP query message to ask for A’s MAC address? Why? 
+5. What will switch S1 do once it receives an ARP response message from Host B?
+-----------------------
+
+a. No, host E won't ask R1 to forward datagram because E and F is inside its LAN, so E even won't ask its default gateway to forward it, 
+only switch will be responsible to forward a packet. 
+src IP = E_ip, dst IP = F_ip, src MAC = E_mac, dst MAC = F_mac
+
+b. No, E won't perform ARP to find B's MAC because they're in different subnets, E will always ARP only to its default gateway (R1) to send frames to different LAN.
+So, src IP = E_ip, dst IP = B_ip, src MAC = E_mac, dst MAC = R1_mac.
+
+c. 1. When A sends broadcast message containing ARP query it'll send to the very next switch that precedes the S1, this switch will then broadcast it to all 
+ports (except A's), specifically B's and S1's. So, when S1 receives broadcast from another switch, it'll forward it to all connected ports - only the very next 
+switch that includes S1 and R1, C and D, and that will in turn forward this broadcast to them. 
+
+2. Yes, R1 will receive broadcast but indirectly from the very last switch in this topology.
+
+3. No. Routers do not forward L2 broadcasts. R1 only processes ARP if the target IP is its own (or if proxy ARP is configured). 
+Here the target is B’s IP, so R1 ignores it.
+
+4. No, since B already learned A's MAC from ARP query that A sent. ARP reply will be actually unicasted directly to A with know MAC.
+
+5. Actually S1 isn't involed in receving response message since B send it to intermiate switch that connects A, B and S1, so S1 does nothing when B replies.

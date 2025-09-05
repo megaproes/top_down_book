@@ -1,0 +1,15 @@
+R14. Consider Figure 6.15. How many subnetworks are there, in the addressing sense of Section 4.3?
+--------------------
+1. Router to Internet (the top-left link): that’s 1 subnet (router interface + ISP interface).
+
+2. Router ↔ central switch (port 6): that’s another subnet. Router port + switch port(s).
+
+3. Central switch ↔ Web server (port 5): 1 subnet.
+
+4. Central switch ↔ Mail server (port 4): 1 subnet.
+
+5. Central switch ↔ Electrical Eng. switch (port 1): that entire switch + hosts is 1 subnet.
+
+6. Central switch ↔ Computer Science switch (port 2): that switch + hosts is 1 subnet.
+
+7. Central switch ↔ Computer Engineering switch (port 3): that switch + hosts is 1 subnet.
